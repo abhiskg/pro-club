@@ -1,6 +1,8 @@
-export const Details = () => {
+export const Details = ({ details }) => {
+  console.log(details);
+  const totalTime = details.reduce((prev, curr) => prev + curr.duration, 0);
   return (
-    <div className="px-4 mt-5 sticky top-5">
+    <div className="px-4 mt-5 sticky top-5 md:w-80 sm:w-72">
       <img
         className="w-12 h-12 rounded-full mx-auto"
         src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
@@ -24,7 +26,7 @@ export const Details = () => {
       </div>
       <h2 className="mt-5 font-medium">Add a Break</h2>
       <h2 className="mt-5 font-medium">Exercise Details</h2>
-      <div>Exercise Time:</div>
+      <div>Exercise Time: {totalTime}</div>
       <div>Break Time:</div>
       <button className="w-full bg-orange-200 rounded py-1.5 mt-3">
         Clear Details

@@ -1,4 +1,4 @@
-export const Activity = ({ activity }) => {
+export const Activity = ({ activity, handleAddToList }) => {
   const { name, image, age, description, duration } = activity;
   return (
     <div className="bg-white rounded p-4">
@@ -11,7 +11,10 @@ export const Activity = ({ activity }) => {
       </p>
       <div className="mt-1">For Age: {age}</div>
       <div className="mt-1">Time required: {duration}s</div>
-      <button className="bg-orange-500 w-full rounded py-1.5 mt-4 font-semibold">
+      <button
+        onClick={() => handleAddToList(activity)}
+        className="bg-orange-500 w-full rounded py-1.5 mt-4 font-semibold"
+      >
         Add to list
       </button>
     </div>
