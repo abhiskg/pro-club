@@ -20,12 +20,9 @@ export const Home = () => {
         <h1>PRO-CLUB</h1>
         <h2>Select today's activity</h2>
         <div className="grid grid-cols-3 gap-5">
-          <Activity />
-          <Activity />
-          <Activity />
-          <Activity />
-          <Activity />
-          <Activity />
+          {activities.map((activity) => (
+            <Activity key={activity._id} activity={activity} />
+          ))}
         </div>
       </div>
       <div className="sticky top-0 bg-white">
