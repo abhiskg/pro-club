@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "633467a0a341063a21575325",
+    "name": "Running",
+    "image": "https://images.unsplash.com/photo-1486218119243-13883505764c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cnVubmluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    "description": "Running is a great exercise for the heart. Over time, it helps your heart pump more efficiently. Running keeps the arteries elastic so blood flows smoothly.",
+    "age": "10-40",
+    "duration": 20
+  },
+  {
+    "_id": "633467a09dc00ab94969565f",
+    "name": "Swimming",
+    "image": "https://images.unsplash.com/photo-1530549387789-4c1017266635?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3dpbW1pbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "description": "Swimming builds endurance, muscle strength and cardiovascular fitness. helps you maintain a healthy weight, healthy heart and lungs. tones muscles and builds strength. provides an all-over body workout, as nearly all of your muscles are used during swimming.",
+    "age": "12-30",
+    "duration": 15
+  },
+  {
+    "_id": "633467a0324a2e9e93a0dad3",
+    "name": "Walking",
+    "image": "https://images.unsplash.com/photo-1606474226448-4aa808468efc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHdhbGtpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "description": "Walking helps to maintain a healthy weight and lose body fat, Improve cardiovascular fitness, Strengthen your bones and muscles.",
+    "age": "8-60",
+    "duration": 30
+  },
+  {
+    "_id": "633467a054cd4f327b60fcd1",
+    "name": "Yoga",
+    "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8eW9nYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    "description": "Yoga improves strength, balance and flexibility. Slow movements and deep breathing increase blood flow and warm up muscles, while holding a pose can build strength.",
+    "age": "10-50",
+    "duration": 10
+  },
+  {
+    "_id": "633467a0de8d81b05063b234",
+    "name": "Gym Workout",
+    "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHdvcmtvdXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "description": "Being physically active can improve your brain health, help manage weight, reduce the risk of disease, strengthen bones and muscles, and improve your ability to do everyday activities. Adults who sit less and do any amount of moderate-to-vigorous physical activity gain some health benefits.",
+    "age": "18-38",
+    "duration": 40
+  },
+  {
+    "_id": "633467a03fbf02c079a4d295",
+    "name": "Dancing",
+    "image": "https://images.pexels.com/photos/898220/pexels-photo-898220.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "description": "Dancing can be a way to stay fit for people of all ages, shapes and sizes. Dancing can improve your muscle tone, strength, endurance and fitness. Dancing is a great way to meet new friends.",
+    "age": "11-30",
+    "duration": 35
+  }
+]
