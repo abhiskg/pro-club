@@ -1,5 +1,30 @@
+import { useEffect, useState } from "react";
+import {
+  clearStorage,
+  getBreakFromStorage,
+  setBreakInStorage,
+} from "../../utils/localStorage";
+
 export const Details = ({ details }) => {
-  console.log(details);
+  const [breakTime, setBreakTime] = useState(0);
+
+  useEffect(() => {
+    const storedTime = getBreakFromStorage();
+    if (storedTime) {
+      setBreakTime(storedTime);
+    }
+  }, []);
+
+  const handleBreak = (value) => {
+    setBreakTime(value);
+    setBreakInStorage(value);
+  };
+
+  const handleStorage = () => {
+    clearStorage();
+    setBreakTime(0);
+  };
+  console.log(breakTime);
   const totalTime = details.reduce((prev, curr) => prev + curr.duration, 0);
   return (
     <div className="px-4 mt-5 sticky top-5 md:w-80 sm:w-72">
@@ -25,10 +50,46 @@ export const Details = ({ details }) => {
         </div>
       </div>
       <h2 className="mt-5 font-medium">Add a Break</h2>
+      <div className="flex justify-center gap-3 bg-gray-100 py-1.5">
+        <div
+          onClick={(e) => handleBreak(10)}
+          className="bg-white cursor-pointer rounded-full p-2"
+        >
+          10s
+        </div>
+        <div
+          onClick={() => handleBreak(20)}
+          className="bg-white cursor-pointer rounded-full p-2"
+        >
+          20s
+        </div>
+        <div
+          onClick={() => handleBreak(30)}
+          className="bg-white cursor-pointer rounded-full p-2"
+        >
+          30s
+        </div>
+        <div
+          onClick={() => handleBreak(40)}
+          className="bg-white cursor-pointer rounded-full p-2"
+        >
+          40s
+        </div>
+        <div
+          onClick={() => handleBreak(50)}
+          className="bg-white cursor-pointer rounded-full p-2"
+        >
+          50s
+        </div>
+      </div>
+
       <h2 className="mt-5 font-medium">Exercise Details</h2>
       <div>Exercise Time: {totalTime}</div>
-      <div>Break Time:</div>
-      <button className="w-full bg-orange-200 rounded py-1.5 mt-3">
+      <div>Break Time:{breakTime}</div>
+      <button
+        onClick={() => handleStorage()}
+        className="w-full bg-orange-200 rounded py-1.5 mt-3"
+      >
         Clear Details
       </button>
       <button className="w-full bg-orange-200 rounded py-1.5 mt-3">
