@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Activity } from "../components/Activity/Activity";
+import { Blogs } from "../components/Blogs/Blogs";
 import { Details } from "../components/Details/Details";
 
 export const Home = () => {
@@ -33,6 +34,7 @@ export const Home = () => {
             />
           ))}
         </div>
+        <Blogs />
       </div>
       <div className="relative bg-white ">
         <Details details={details} />

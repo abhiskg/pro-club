@@ -38,66 +38,76 @@ export const Details = ({ details }) => {
       />
       <h2 className="font-semibold text-center">Abhishek Sengupta</h2>
       <p className="text-gray-500 text-sm text-center">Chittagong Bangladesh</p>
-      <div className="flex gap-5 mt-4 items-center justify-center ">
+      <div className="flex gap-7 mt-4 items-center justify-center bg-orange-200 rounded py-1">
         <div>
-          <div className="font-medium text-center">75kg</div>
-          <div className="text-sm text-gray-500">Weight</div>
+          <div className="font-medium text-center">61kg</div>
+          <div className="text-sm text-gray-600">Weight</div>
         </div>
         <div>
-          <div className="font-medium text-center">6.5</div>
-          <div className="text-sm text-gray-500 text-center">Height</div>
+          <div className="font-medium text-center">27yrs</div>
+          <div className="text-sm text-gray-600 text-center">Age</div>
         </div>
         <div>
-          <div className="font-medium text-center">25yrs</div>
-          <div className="text-sm text-gray-500 text-center">Age</div>
+          <div className="font-medium text-center">6.6inch</div>
+          <div className="text-sm text-gray-600 text-center">Height</div>
         </div>
       </div>
       <h2 className="mt-5 font-medium">Add a Break</h2>
-      <div className="flex justify-center gap-3 bg-gray-100 py-1.5">
+      <div className="flex justify-center gap-3 bg-orange-200 py-1.5 rounded">
         <div
           onClick={(e) => handleBreak(10)}
-          className="bg-white cursor-pointer rounded-full p-2"
+          className="bg-white cursor-pointer rounded-full p-2 hover:bg-orange-500 font-medium"
         >
           10s
         </div>
         <div
           onClick={() => handleBreak(20)}
-          className="bg-white cursor-pointer rounded-full p-2"
+          className="bg-white cursor-pointer rounded-full p-2 hover:bg-orange-500 font-medium"
         >
           20s
         </div>
         <div
           onClick={() => handleBreak(30)}
-          className="bg-white cursor-pointer rounded-full p-2"
+          className="bg-white cursor-pointer rounded-full p-2 hover:bg-orange-500 font-medium"
         >
           30s
         </div>
         <div
           onClick={() => handleBreak(40)}
-          className="bg-white cursor-pointer rounded-full p-2"
+          className="bg-white cursor-pointer rounded-full p-2 hover:bg-orange-500 font-medium"
         >
           40s
         </div>
         <div
           onClick={() => handleBreak(50)}
-          className="bg-white cursor-pointer rounded-full p-2"
+          className="bg-white cursor-pointer rounded-full p-2 hover:bg-orange-500 font-medium"
         >
           50s
         </div>
       </div>
 
-      <h2 className="mt-5 font-medium">Exercise Details</h2>
-      <div>Exercise Time: {totalTime}</div>
-      <div>Break Time:{breakTime}</div>
+      <h2 className="mt-5 font-semibold">Activity Details:</h2>
+      <div className="bg-orange-200 px-4 py-3 rounded flex justify-between">
+        <span className="font-medium">Activity Time:</span>{" "}
+        <span className="text-gray-600">
+          {totalTime} {totalTime === 0 ? "second" : "seconds"}
+        </span>
+      </div>
+      <div className="bg-orange-200 px-4 py-3 rounded flex justify-between mt-2">
+        <span className="font-medium">Break Time:</span>{" "}
+        <span className="text-gray-600">
+          {breakTime} {breakTime === 0 ? "second" : "seconds"}
+        </span>
+      </div>
       <button
         onClick={() => handleStorage()}
-        className="w-full bg-orange-200 rounded py-1.5 mt-3"
+        className="w-full bg-orange-500 rounded py-1.5 mt-5 font-medium"
       >
         Clear Details
       </button>
       <button
         onClick={notify}
-        className="w-full bg-orange-200 rounded py-1.5 mt-3"
+        className="w-full bg-orange-500 rounded py-1.5 mt-2 font-medium"
       >
         Activity Completed
       </button>
