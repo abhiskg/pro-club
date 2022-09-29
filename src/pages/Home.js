@@ -23,7 +23,9 @@ export const Home = () => {
   return (
     <div className="bg-gray-100 flex relative flex-col sm:flex-row">
       <div className="mx-10 order-1 sm:order-none">
-        <h1 className="text-4xl font-bold text-orange-500 mt-10">PRO-CLUB</h1>
+        <h1 className="text-4xl font-bold text-orange-500 mt-10 text-center">
+          PRO-CLUB
+        </h1>
         <h2 className="mt-5 font-semibold text-lg">Select today's activity</h2>
         <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-5 mt-3">
           {activities.map((activity) => (

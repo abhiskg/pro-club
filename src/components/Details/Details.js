@@ -32,7 +32,7 @@ export const Details = ({ details }) => {
   return (
     <div className="px-4 mt-5 sticky top-5 md:w-80 sm:w-72">
       <img
-        className="w-12 h-12 rounded-full mx-auto"
+        className="w-12 h-12 rounded-full mx-auto outline outline-orange-300"
         src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
         alt=""
       />
