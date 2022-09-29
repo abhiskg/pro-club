@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   clearStorage,
   getBreakFromStorage,
@@ -24,7 +26,8 @@ export const Details = ({ details }) => {
     clearStorage();
     setBreakTime(0);
   };
-  console.log(breakTime);
+
+  const notify = () => toast("Congratulations! You have done your activity.");
   const totalTime = details.reduce((prev, curr) => prev + curr.duration, 0);
   return (
     <div className="px-4 mt-5 sticky top-5 md:w-80 sm:w-72">
@@ -92,9 +95,13 @@ export const Details = ({ details }) => {
       >
         Clear Details
       </button>
-      <button className="w-full bg-orange-200 rounded py-1.5 mt-3">
+      <button
+        onClick={notify}
+        className="w-full bg-orange-200 rounded py-1.5 mt-3"
+      >
         Activity Completed
       </button>
+      <ToastContainer position="bottom-right" />
     </div>
   );
 };
