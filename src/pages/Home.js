@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import { Activity } from "../components/Activity/Activity";
 import { Blogs } from "../components/Blogs/Blogs";
 import { Details } from "../components/Details/Details";
+import {
+  getActivityFromStorage,
+  setActivityInStorage,
+} from "../utils/localStorage";
 
 export const Home = () => {
   const [activities, setActivities] = useState([]);
@@ -16,8 +20,37 @@ export const Home = () => {
     loadActivities();
   }, []);
 
+  useEffect(() => {
+    const storedActivity = getActivityFromStorage();
+    const savedActivityArray = [];
+    for (const id in storedActivity) {
+      const savedActivity = activities.find((activity) => activity._id === id);
+      if (savedActivity) {
+        savedActivity.quantity = storedActivity[id];
+        savedActivityArray.push(savedActivity);
+      }
+    }
+    setDetails(savedActivityArray);
+  }, [activities]);
+
   const handleAddToList = (activity) => {
-    setDetails([...details, activity]);
+    setActivityInStorage(activity._id);
+    const storedActivity = details.find(
+      (detail) => detail._id === activity._id
+    );
+
+    let newActivity = [];
+    if (!storedActivity) {
+      activity.quantity = 1;
+      newActivity = [...details, activity];
+    } else {
+      const remainActivity = details.filter(
+        (detail) => detail._id !== activity._id
+      );
+      storedActivity.quantity = storedActivity.quantity + 1;
+      newActivity = [...remainActivity, storedActivity];
+    }
+    setDetails(newActivity);
   };
 
   return (
@@ -39,7 +72,7 @@ export const Home = () => {
         <Blogs />
       </div>
       <div className="relative bg-white ">
-        <Details details={details} />
+        <Details details={details} setDetails={setDetails} />
       </div>
     </div>
   );

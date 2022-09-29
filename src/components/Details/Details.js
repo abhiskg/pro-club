@@ -7,7 +7,7 @@ import {
   setBreakInStorage,
 } from "../../utils/localStorage";
 
-export const Details = ({ details }) => {
+export const Details = ({ details, setDetails }) => {
   const [breakTime, setBreakTime] = useState(0);
 
   useEffect(() => {
@@ -25,10 +25,15 @@ export const Details = ({ details }) => {
   const handleStorage = () => {
     clearStorage();
     setBreakTime(0);
+    setDetails([]);
   };
 
   const notify = () => toast("Congratulations! You have done your activity.");
-  const totalTime = details.reduce((prev, curr) => prev + curr.duration, 0);
+  const totalTime = details?.reduce(
+    (prev, curr) => prev + curr.duration * curr.quantity,
+    0
+  );
+
   return (
     <div className="px-4 mt-5 sticky top-5 md:w-80 sm:w-72">
       <img
@@ -103,7 +108,7 @@ export const Details = ({ details }) => {
         onClick={() => handleStorage()}
         className="w-full bg-orange-500 rounded py-1.5 mt-5 font-medium"
       >
-        Clear Details
+        Clear Activity
       </button>
       <button
         onClick={notify}
