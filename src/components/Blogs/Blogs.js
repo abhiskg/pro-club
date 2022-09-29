@@ -1,11 +1,11 @@
 export const Blogs = () => {
   return (
-    <div className="mt-10">
+    <div className="mt-12">
       <h2 className="text-4xl font-bold text-orange-500 mt-10 text-center">
         Blogs
       </h2>
       <div className="mt-5">
-        <h2 className="font-medium text-xl">Q1: How Does React Work?</h2>
+        <h2 className="font-medium text-lg">Q1: How Does React Work?</h2>
         <p>
           <span className="font-medium">Ans:</span> ReactJS divides the UI into
           isolated reusable pieces of code known as components. React components
@@ -20,7 +20,7 @@ export const Blogs = () => {
         </p>
       </div>
       <div className="mt-5">
-        <h2 className="font-medium text-xl">
+        <h2 className="font-medium text-lg">
           Q2: What is the Difference between props and state?{" "}
         </h2>
         <p>
@@ -36,7 +36,7 @@ export const Blogs = () => {
         </p>
       </div>
       <div className="my-5">
-        <h2 className="font-medium text-xl">
+        <h2 className="font-medium text-lg">
           Q3: What useEffect does except data loading?
         </h2>
         <p>

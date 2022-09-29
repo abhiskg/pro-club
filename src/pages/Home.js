@@ -55,12 +55,15 @@ export const Home = () => {
 
   return (
     <div className="bg-gray-100 flex relative flex-col sm:flex-row">
-      <div className="mx-10 order-1 sm:order-none">
-        <h1 className="text-4xl font-bold text-orange-500 mt-10 text-center">
-          PRO-CLUB
-        </h1>
-        <h2 className="mt-5 font-semibold text-lg">Select today's activity</h2>
-        <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-5 mt-3">
+      <div className="md:mx-10 mx-4 order-1 sm:order-none">
+        <div className="flex items-center justify-center text-orange-500 mt-10 gap-1">
+          <img src="assets/activity.svg" alt="" />
+          <h1 className="md:text-4xl text-3xl font-bold  text-center">
+            PRO-CLUB
+          </h1>
+        </div>
+        <h2 className="mt-5 font-semibold text-xl">Select today's activity</h2>
+        <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-5 mt-5">
           {activities.map((activity) => (
             <Activity
               key={activity._id}
@@ -71,7 +74,7 @@ export const Home = () => {
         </div>
         <Blogs />
       </div>
-      <div className="relative bg-white ">
+      <div className="relative bg-white sm:shadow ">
         <Details details={details} setDetails={setDetails} />
       </div>
     </div>

@@ -35,15 +35,17 @@ export const Details = ({ details, setDetails }) => {
   );
 
   return (
-    <div className="px-4 mt-5 sticky top-5 md:w-80 sm:w-72">
+    <div className="px-4 py-5 sm:sticky sm:top-5 md:w-80 sm:w-72">
       <img
         className="w-12 h-12 rounded-full mx-auto outline outline-orange-300"
         src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
         alt=""
       />
-      <h2 className="font-semibold text-center">Abhishek Sengupta</h2>
-      <p className="text-gray-500 text-sm text-center">Chittagong Bangladesh</p>
-      <div className="flex gap-7 mt-4 items-center justify-center bg-orange-200 rounded py-1">
+      <h2 className="font-semibold text-center mt-1">Abhishek Sengupta</h2>
+      <p className="text-gray-500 text-sm text-center ">
+        Chittagong, Bangladesh
+      </p>
+      <div className="flex gap-8 mt-5 items-center justify-center bg-orange-200 rounded py-1.5">
         <div>
           <div className="font-medium text-center">61kg</div>
           <div className="text-sm text-gray-600">Weight</div>
@@ -57,48 +59,58 @@ export const Details = ({ details, setDetails }) => {
           <div className="text-sm text-gray-600 text-center">Height</div>
         </div>
       </div>
-      <h2 className="mt-5 font-medium">Add a Break</h2>
-      <div className="flex justify-center gap-3 bg-orange-200 py-1.5 rounded">
+      <h2 className="mt-5 font-medium">Add a Break:</h2>
+      <div className="flex justify-center gap-3 bg-orange-200 py-2 rounded mt-1">
         <div
           onClick={(e) => handleBreak(10)}
-          className="bg-white cursor-pointer rounded-full p-2 hover:bg-orange-500 font-medium"
+          className={`${
+            breakTime === 10 ? "bg-orange-500" : "bg-white"
+          } cursor-pointer rounded-full p-2 hover:bg-orange-600 font-medium`}
         >
           10s
         </div>
         <div
           onClick={() => handleBreak(20)}
-          className="bg-white cursor-pointer rounded-full p-2 hover:bg-orange-500 font-medium"
+          className={`${
+            breakTime === 20 ? "bg-orange-500" : "bg-white"
+          } cursor-pointer rounded-full p-2 hover:bg-orange-600 font-medium`}
         >
           20s
         </div>
         <div
           onClick={() => handleBreak(30)}
-          className="bg-white cursor-pointer rounded-full p-2 hover:bg-orange-500 font-medium"
+          className={`${
+            breakTime === 30 ? "bg-orange-500" : "bg-white"
+          } cursor-pointer rounded-full p-2 hover:bg-orange-600 font-medium`}
         >
           30s
         </div>
         <div
           onClick={() => handleBreak(40)}
-          className="bg-white cursor-pointer rounded-full p-2 hover:bg-orange-500 font-medium"
+          className={`${
+            breakTime === 40 ? "bg-orange-500" : "bg-white"
+          } cursor-pointer rounded-full p-2 hover:bg-orange-600 font-medium`}
         >
           40s
         </div>
         <div
           onClick={() => handleBreak(50)}
-          className="bg-white cursor-pointer rounded-full p-2 hover:bg-orange-500 font-medium"
+          className={`${
+            breakTime === 50 ? "bg-orange-500" : "bg-white"
+          } cursor-pointer rounded-full p-2 hover:bg-orange-600 font-medium`}
         >
           50s
         </div>
       </div>
 
       <h2 className="mt-5 font-semibold">Activity Details:</h2>
-      <div className="bg-orange-200 px-4 py-3 rounded flex justify-between">
+      <div className="bg-orange-200 px-4 py-3.5 rounded flex justify-between mt-1">
         <span className="font-medium">Activity Time:</span>{" "}
         <span className="text-gray-600">
           {totalTime} {totalTime === 0 ? "second" : "seconds"}
         </span>
       </div>
-      <div className="bg-orange-200 px-4 py-3 rounded flex justify-between mt-2">
+      <div className="bg-orange-200 px-4 py-3.5 rounded flex justify-between mt-2">
         <span className="font-medium">Break Time:</span>{" "}
         <span className="text-gray-600">
           {breakTime} {breakTime === 0 ? "second" : "seconds"}
@@ -106,13 +118,13 @@ export const Details = ({ details, setDetails }) => {
       </div>
       <button
         onClick={() => handleStorage()}
-        className="w-full bg-orange-500 rounded py-1.5 mt-5 font-medium"
+        className="w-full bg-orange-500 rounded py-1.5 mt-6 font-medium hover:bg-orange-600"
       >
         Clear Activity
       </button>
       <button
         onClick={notify}
-        className="w-full bg-orange-500 rounded py-1.5 mt-2 font-medium"
+        className="w-full bg-orange-500 rounded py-1.5 mt-2.5 font-medium hover:bg-orange-600"
       >
         Activity Completed
       </button>
